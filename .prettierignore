@@ -1,4 +1,39 @@
+# Dependencies
+node_modules
+.pnpm-store
+
 # Lock files
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+
+# Build outputs
+dist
+doc_build
+.rslib
+.rsbuild
+
+# Cache
+.cache
+.temp
+.tmp
+
+# Logs
+*.log
+logs
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Storybook
+storybook-static
+
+# Coverage
+coverage
+.nyc_output
+

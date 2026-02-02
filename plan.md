@@ -168,8 +168,8 @@ plus-components/
 
 ```typescript
 // rspress.config.ts
-import { defineConfig } from 'rspress/config';
-import path from 'path';
+import { defineConfig } from 'rspress/config'
+import path from 'path'
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -266,9 +266,9 @@ export default defineConfig({
                     '@': path.join(__dirname, 'src'),
                   },
                 },
-              };
+              }
             },
-          };
+          }
         },
       },
     ],
@@ -278,7 +278,7 @@ export default defineConfig({
     import('@rspress/plugin-preview').then((m) =>
       m.pluginPreview({
         previewLanguages: ['vue', 'tsx', 'ts'],
-      }),
+      })
     ),
     import('@rspress/plugin-last-updated').then((m) => m.pluginLastUpdated()),
     import('@rspress/plugin-shiki').then((m) =>
@@ -287,10 +287,10 @@ export default defineConfig({
           light: 'github-light',
           dark: 'github-dark',
         },
-      }),
+      })
     ),
   ],
-});
+})
 ```
 
 ### 4.2 自定义主题配置
@@ -355,13 +355,7 @@ export default {
     "browser": true,
     "es2021": true
   },
-  "ignore": [
-    "dist/**",
-    "node_modules/**",
-    "**/*.stories.{js,ts}",
-    "**/dist/**",
-    "docs/**"
-  ],
+  "ignore": ["dist/**", "node_modules/**", "**/*.stories.{js,ts}", "**/dist/**", "docs/**"],
   "categories": {
     "correctness": "warn",
     "suspicious": "warn",
@@ -419,8 +413,8 @@ export default {
 
 ```typescript
 // rslib.config.ts
-import { defineConfig } from '@rslib/core';
-import { pluginUnpluginVue } from 'rsbuild-plugin-unplugin-vue';
+import { defineConfig } from '@rslib/core'
+import { pluginUnpluginVue } from 'rsbuild-plugin-unplugin-vue'
 
 export default defineConfig({
   lib: [
@@ -462,7 +456,7 @@ export default defineConfig({
   dev: {
     progressBar: true,
   },
-});
+})
 ```
 
 ---
@@ -471,7 +465,7 @@ export default defineConfig({
 
 ```typescript
 // rstest.config.ts
-import { defineConfig } from '@rstest/core';
+import { defineConfig } from '@rstest/core'
 
 export default defineConfig({
   environment: 'happy-dom',
@@ -483,7 +477,7 @@ export default defineConfig({
     exclude: ['src/**/*.d.ts', 'src/**/typing.ts'],
   },
   setupFiles: ['./tests/setup.ts'],
-});
+})
 ```
 
 ---
@@ -534,79 +528,79 @@ export default defineConfig({
 ```typescript
 // src/table/typing.ts
 export interface ProTableProps<T = any> {
-  columns?: ProColumns<T>[];
-  request?: (params: any) => Promise<{ data: T[]; total: number }>;
-  pagination?: PaginationConfig;
-  rowKey?: string | ((record: T) => string);
-  search?: false | SearchConfig;
-  toolBarRender?: () => VNode[];
-  actionRef?: Ref<TableActionType>;
+  columns?: ProColumns<T>[]
+  request?: (params: any) => Promise<{ data: T[]; total: number }>
+  pagination?: PaginationConfig
+  rowKey?: string | ((record: T) => string)
+  search?: false | SearchConfig
+  toolBarRender?: () => VNode[]
+  actionRef?: Ref<TableActionType>
 }
 
 export interface ProColumns<T = any> {
-  dataIndex: string | string[];
-  title: string;
-  valueType?: 'text' | 'date' | 'select' | 'number';
-  valueEnum?: Record<string, { label: string; status?: string }>;
-  render?: (text: any, record: T, index: number) => VNode;
+  dataIndex: string | string[]
+  title: string
+  valueType?: 'text' | 'date' | 'select' | 'number'
+  valueEnum?: Record<string, { label: string; status?: string }>
+  render?: (text: any, record: T, index: number) => VNode
 }
 
 export type TableActionType = {
-  reload: () => void;
-  getDataSource: () => T[];
-  setDataSource: (data: T[]) => void;
-};
+  reload: () => void
+  getDataSource: () => T[]
+  setDataSource: (data: T[]) => void
+}
 ```
 
 ```vue
 <!-- src/table/ProTable/index.vue -->
 <script setup lang="ts" generic="T = any">
-import { ref, watch, computed } from 'vue';
-import type { ProTableProps, TableActionType } from '../typing';
+import { ref, watch, computed } from 'vue'
+import type { ProTableProps, TableActionType } from '../typing'
 
 const props = withDefaults(defineProps<ProTableProps<T>>(), {
   rowKey: 'id',
-});
+})
 
 const emit = defineEmits<{
-  'update:dataSource': [data: T[]];
-}>();
+  'update:dataSource': [data: T[]]
+}>()
 
-const loading = ref(false);
-const dataSource = ref<T[]>([]);
+const loading = ref(false)
+const dataSource = ref<T[]>([])
 const pagination = ref({
   current: 1,
   pageSize: 10,
   total: 0,
-});
+})
 
 const fetchData = async () => {
-  if (!props.request) return;
-  loading.value = true;
+  if (!props.request) return
+  loading.value = true
   try {
     const res = await props.request({
       ...pagination.value,
-    });
-    dataSource.value = res.data;
-    pagination.value.total = res.total;
+    })
+    dataSource.value = res.data
+    pagination.value.total = res.total
   } finally {
-    loading.value = false;
+    loading.value = false
   }
-};
+}
 
-watch(() => props.request, fetchData, { immediate: true });
+watch(() => props.request, fetchData, { immediate: true })
 
 const actionRef = computed<TableActionType>(() => ({
   reload: fetchData,
   getDataSource: () => dataSource.value,
   setDataSource: (data) => {
-    dataSource.value = data;
-    emit('update:dataSource', data);
+    dataSource.value = data
+    emit('update:dataSource', data)
   },
-}));
+}))
 
 if (props.actionRef) {
-  Object.assign(props.actionRef, actionRef.value);
+  Object.assign(props.actionRef, actionRef.value)
 }
 </script>
 
@@ -633,35 +627,35 @@ if (props.actionRef) {
 export function useRequest<T = any>(
   service: (params: any) => Promise<T>,
   options: {
-    manual?: boolean;
-    defaultParams?: any;
-    onSuccess?: (data: T) => void;
-    onError?: (error: Error) => void;
-  } = {},
+    manual?: boolean
+    defaultParams?: any
+    onSuccess?: (data: T) => void
+    onError?: (error: Error) => void
+  } = {}
 ) {
-  const loading = ref(false);
-  const data = ref<T | null>(null);
-  const error = ref<Error | null>(null);
+  const loading = ref(false)
+  const data = ref<T | null>(null)
+  const error = ref<Error | null>(null)
 
   const run = async (params: any = {}) => {
-    loading.value = true;
-    error.value = null;
+    loading.value = true
+    error.value = null
     try {
-      const res = await service({ ...options.defaultParams, ...params });
-      data.value = res;
-      options.onSuccess?.(res);
-      return res;
+      const res = await service({ ...options.defaultParams, ...params })
+      data.value = res
+      options.onSuccess?.(res)
+      return res
     } catch (e: any) {
-      error.value = e;
-      options.onError?.(e);
-      throw e;
+      error.value = e
+      options.onError?.(e)
+      throw e
     } finally {
-      loading.value = false;
+      loading.value = false
     }
-  };
+  }
 
   if (!options.manual) {
-    run();
+    run()
   }
 
   return {
@@ -670,7 +664,7 @@ export function useRequest<T = any>(
     error,
     run,
     refresh: () => run(),
-  };
+  }
 }
 ```
 

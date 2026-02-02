@@ -44,6 +44,8 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/vue": "^8.1.0",
     "@vue/test-utils": "^2.4.6",
+    "@vueuse/core": "^14.2.0",
+    "element-plus": "^2.13.2",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
     "happy-dom": "^20.3.3",

@@ -10,7 +10,9 @@
     >
       <el-skeleton :rows="0" :animated="active">
         <template #template>
-          <el-skeleton-item variant="button" style="width: 102px"></el-skeleton-item>
+          <div style="display: flex; justify-content: center; width: 100%;">
+            <el-skeleton-item variant="button" style="width: 102px; height: 24px"></el-skeleton-item>
+          </div>
         </template>
       </el-skeleton>
     </el-card>

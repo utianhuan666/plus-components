@@ -16,10 +16,10 @@
             }"
           >
             <div :style="{ maxWidth: '100%', flex: 1 }">
-              <el-skeleton-item variant="text" style="width: 100px" />
-              <el-skeleton-item variant="text" style="width: 100%; margin-top: 16px" />
+              <el-skeleton-item variant="text" style="width: 100px;display: block;" />
+              <el-skeleton-item variant="text" style="width: 61%; margin-top: 16px" />
             </div>
-            <el-skeleton-item variant="button" style="width: 165px; margin-top: 12px" />
+            <el-skeleton-item variant="button" style="width: 165px; height: 24px" />
           </div>
         </template>
       </el-skeleton>

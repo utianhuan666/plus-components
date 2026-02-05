@@ -6,21 +6,21 @@
   >
     <el-skeleton :rows="0" :animated="active">
       <template #template>
-        <el-space style="width: 100%" justify="space-between">
-          <el-skeleton-item variant="button" style="width: 200px" />
+        <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+          <el-skeleton-item variant="button" style="width: 200px; height: 24px" />
 
-          <el-space>
-            <el-skeleton-item variant="button" style="width: 120px" />
-            <el-skeleton-item variant="button" style="width: 80px" />
-          </el-space>
-        </el-space>
+          <div style="display: flex; gap: 8px;">
+            <el-skeleton-item variant="button" style="width: 120px; height: 24px" />
+            <el-skeleton-item variant="button" style="width: 80px; height: 24px" />
+          </div>
+        </div>
       </template>
     </el-skeleton>
   </el-card>
 </template>
 
 <script setup lang="ts">
-  import { ElCard, ElSkeleton, ElSkeletonItem, ElSpace } from 'element-plus'
+  import { ElCard, ElSkeleton, ElSkeletonItem } from 'element-plus'
 
   interface Props {
     active: boolean

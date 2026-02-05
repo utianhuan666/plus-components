@@ -1,62 +1,48 @@
 ---
-title: Skeleton 骨架屏
-category: components
+title: ProSkeleton 骨架屏
+group: Skeleton
+atomId: ProSkeleton
 ---
 
-# Skeleton 骨架屏
+# ProSkeleton - 骨架屏
 
-在需要等待加载内容的位置提供一个占位图形组合。
+> 该组件为内部组件，请勿直接使用。
 
-## 何时使用
+页面级别的骨架屏，不支持自定义
 
-- 网络较慢,需要长时间等待加载处理的情况下。
-- 图文信息内容较多的列表/卡片中。
-- 只在第一次加载数据的时候使用。
-- 可以被 Loading 完全代替,但是在可用的场景下可以比 Loading 提供更好的视觉效果和用户体验。
+## 安装和初始化
 
-## 代码演示
+```typescript
+import Skeleton from '@plus-ui/pro-skeleton';
 
-### 基础用法
+return <Skeleton type="list" />;
+```
 
-最简单的占位效果。
+## DEMO
+
+### 列表页面
 
 :::demo
 
-skeleton/basic
+skeleton/list
 
 :::
 
-### 复杂的组合
-
-更复杂的组合,包含列表骨架屏。
+### 静态列表
 
 :::demo
 
-skeleton/loading
-
-:::
-
-### 动画效果
-
-显示动画效果。
-
-:::demo
-
-skeleton/animated
+skeleton/list-static
 
 :::
 
 ## API
 
-### ListSkeleton Props
-
-| 参数         | 说明           | 类型      | 默认值 |
-| ------------ | -------------- | --------- | ------ |
-| size         | 列表项数量     | `number`  | -      |
-| active       | 是否展示动画效果 | `boolean` | true   |
-| actionButton | 是否显示操作按钮 | `boolean` | true   |
-
-## 相关组件
-
-- [ProList 高级列表](/components/list)
-- [ProTable 高级表格](/components/table)
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| type | 不同类型的骨架屏 | `'list' \| 'result' \| 'descriptions'` | list |
+| active | 是否显示动态 | boolean | true |
+| pageHeader | 是否显示 pageHeader 的骨架屏 descriptions 和 list 有效 | boolean | true |
+| statistic | 统计信息骨架屏的数量 | `number` \| `false` | 4 |
+| list | 列表的骨架屏，可以控制数量 | `number` \| `false` | 5 |
+| toolbar | 列表的操作栏骨架屏 | boolean | true |

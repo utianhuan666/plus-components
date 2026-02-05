@@ -1,13 +1,18 @@
 <template>
   <div :style="{ marginBottom: '16px' }">
-    <!-- 使用 el-skeleton 包裹，支持动画效果 -->
     <el-skeleton :rows="0" :animated="active">
       <template #template>
-        <!-- 标题骨架：宽度 185px -->
-        <el-skeleton-item variant="text" style="width: 185px" />
-
-        <!-- 按钮骨架：小尺寸 -->
-        <el-skeleton-item variant="button" style="width: 80px" />
+        <!-- Title Skeleton: Block element, 32px height to match Ant Design h3, margin-bottom for spacing -->
+        <el-skeleton-item 
+          variant="h3" 
+          style="width: 185px; height: 32px; display: block; margin-bottom: 24px" 
+        />
+        
+        <!-- Button Skeleton: Small size (24px height), default width 64px -->
+        <el-skeleton-item 
+          variant="button" 
+          style="width: 64px; height: 24px" 
+        />
       </template>
     </el-skeleton>
   </div>

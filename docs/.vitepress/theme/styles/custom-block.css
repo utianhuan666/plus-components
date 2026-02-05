@@ -1,0 +1,27 @@
+/* .vitepress/theme/styles/custom-block.css */
+/* tip */
+.vp-doc .custom-block.tip {
+  border-radius: 10px;
+  border-left: 6px solid var(--vp-c-brand);
+}
+.vp-doc .custom-block.tip .custom-block-title {
+  color: var(--vp-c-brand);
+}
+
+/* warning */
+.vp-doc .custom-block.warning {
+  border-radius: 10px;
+  border-left: 6px solid var(--vp-c-yellow);
+}
+.vp-doc .custom-block.warning .custom-block-title {
+  color: var(--vp-c-yellow);
+}
+
+/* danger */
+.vp-doc .custom-block.danger {
+  border-radius: 10px;
+  border-left: 6px solid var(--vp-c-red);
+}
+.vp-doc .custom-block.danger .custom-block-title {
+  color: var(--vp-c-red);
+}

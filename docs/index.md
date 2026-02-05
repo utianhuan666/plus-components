@@ -14,7 +14,7 @@ hero:
       text: 组件总览
       link: /guide/components
   image:
-    src: /logo.svg
+    src: /logo.png
     alt: Plus Components
 
 features:

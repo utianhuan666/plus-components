@@ -1,6 +1,6 @@
 <template>
   <div style="background: #fafafa; padding: 24px">
-    <PlusSkeleton type="list" :statistic="2" />
+    <PlusSkeleton type="list" :statistic="2" :active="false"/>
   </div>
 </template>
 

@@ -4,17 +4,17 @@
 
 ### Layout (布局)
 
-| 组件          | 说明       | 文档                       |
-| ------------- | ---------- | -------------------------- |
-| ProLayout     | 企业级布局 | [文档](/components/layout) |
-| PageContainer | 页面容器   | 待开发                     |
-| SettingDrawer | 设置抽屉   | 待开发                     |
+| 组件          | 说明       | 文档   |
+| ------------- | ---------- | ------ |
+| ProLayout     | 企业级布局 | 待开发 |
+| PageContainer | 页面容器   | 待开发 |
+| SettingDrawer | 设置抽屉   | 待开发 |
 
 ### Table (表格)
 
 | 组件          | 说明                             | 文档                      |
 | ------------- | -------------------------------- | ------------------------- |
-| ProTable      | 高级表格，支持搜索、分页、工具栏 | [文档](/components/table) |
+| ProTable      | 高级表格，支持搜索、分页、工具栏 | [文档](/components/table/) |
 | EditableTable | 可编辑表格                       | 待开发                    |
 | DragSortTable | 拖拽排序表格                     | 待开发                    |
 
@@ -41,19 +41,25 @@
 | ProList         | 高级列表 | 待开发 |
 | ProDescriptions | 描述列表 | 待开发 |
 
+### Skeleton (骨架屏)
+
+| 组件     | 说明       | 文档                         |
+| -------- | ---------- | ---------------------------- |
+| Skeleton | 骨架屏组件 | [文档](/components/skeleton/) |
+
 ### Basic (基础组件)
 
-| 组件   | 说明   | 文档                       |
-| ------ | ------ | -------------------------- |
-| Button | 按钮   | [文档](/components/button) |
-| Input  | 输入框 | 待开发                     |
-| Select | 选择器 | 待开发                     |
+| 组件   | 说明   | 文档   |
+| ------ | ------ | ------ |
+| Button | 按钮   | 待开发 |
+| Input  | 输入框 | 待开发 |
+| Select | 选择器 | 待开发 |
 
 ## 开发进度
 
 ### 已完成
 
-- [x] Button
+- [x] Skeleton
 - [x] ProTable (基础版本）
 
 ### 开发中
@@ -67,11 +73,9 @@
 - [ ] ProList
 - [ ] Input
 - [ ] Select
+- [ ] Button
 
 ## 快速导航
 
-- [Button 按钮](/components/button)
-- [ProTable 高级表格](/components/table)
-- [ProForm 高级表单](/components/form)
-- [ProLayout 企业级布局](/components/layout)
-- [ProCard 高级卡片](/components/card)
+- [Skeleton 骨架屏](/components/skeleton/)
+- [ProTable 高级表格](/components/table/)

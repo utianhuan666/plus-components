@@ -230,4 +230,4 @@ describe('YourComponent', () => {
 
 ## 许可证
 
-通过贡献代码，你同意你的贡献将在 [MIT License](LICENSE) 下发布。
+通过贡献代码，你同意你的贡献将在 MIT License 下发布。

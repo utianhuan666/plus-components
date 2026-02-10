@@ -5,6 +5,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import ListPageSkeleton from './components/List/ListPageSkeleton.vue'
+import ResultPageSkeleton from './components/Result/index.vue'
 
 interface Props {
   type?: 'list' | 'result' | 'descriptions'
@@ -18,12 +19,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const skeletonComponent = computed(() => {
   if (props.type === 'result') {
-    // TODO: 实现 ResultPageSkeleton
-    return ListPageSkeleton
+    return ResultPageSkeleton
   }
 
   if (props.type === 'descriptions') {
-    // TODO: 实现 DescriptionsPageSkeleton
     return ListPageSkeleton
   }
 
